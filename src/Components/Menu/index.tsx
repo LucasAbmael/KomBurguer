@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom';
 import styles from "./Menu.module.css";
 import { Link } from 'react-router-dom';
 import { IoClose } from "react-icons/io5";
+import { FaCartShopping } from "react-icons/fa6";
+import { MdContactSupport } from "react-icons/md";
+import { AiFillInstagram } from "react-icons/ai";
 
 interface Props {
   image: string;
@@ -42,9 +45,9 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
             <button onClick={toggleMenu} style={{ border: "none", outline: "none", background: "none" }}>
               <IoClose size={40} color="#626262" />
             </button>
-            <Link to="/Carrinho" className={styles.menuLink}>Carrinho</Link>
-            <a href="https://wa.me//555190135176" className={styles.menuLink}>Contato</a>
-            <a href="https://instagram.com/komburguerrn" className={styles.menuLink}>Nosso Instagram</a>
+            <Link to="/Carrinho" className={styles.menuLink}><FaCartShopping size={24} color="#626262"/>Carrinho</Link>
+            <a href="https://wa.me//555190135176" className={styles.menuLink}><MdContactSupport size={24} color="#626262" />Contato</a>
+            <a href="https://instagram.com/komburguerrn" className={styles.menuLink}><AiFillInstagram size={24} color="#626262" />Nosso Instagram</a>
           </nav>
         )}
         <a href="#" className={styles.menuLogo}>KomBurguer</a>
