@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "X-Tudo",
+        "preco": "29,90",
+        "ingredientes": "..."
+    },
+    {
+        "nome": "X-Salada",
+        "preco": "29,90",
+        "ingredientes": "..."
+    },
+    {
+        "nome": "X-Bacon",
+        "preco": "29,90",
+        "ingredientes": "..."
+    },
+    {
+        "nome": "Tradicional",
+        "preco": "29,90",
+        "ingredientes": "..."
+    },
+    {
+        "nome": "Combo",
+        "preco": "29,90",
+        "ingredientes": "..."
+    },
+    {
+        "nome": "Vegano",
+        "preco": "29,90",
+        "ingredientes": "..."
+    }
+]

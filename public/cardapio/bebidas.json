@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Coca-cola Lata",
+        "preco": "8,50"
+    },
+    {
+        "nome": "Coca-cola 1L",
+        "preco": "8,50"
+    },
+    {
+        "nome": "Cajuína 1L",
+        "preco": "8,50"
+    },
+    {
+        "nome": "Pepsi 2L",
+        "preco": "8,50"
+    },
+    {
+        "nome": "Guaraná 2L",
+        "preco": "8,50"
+    }
+]

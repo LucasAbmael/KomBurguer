@@ -1,0 +1,84 @@
+.Menu {
+    width: 100%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menuTop {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+}
+
+.menuTop .menuLogo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--destaque);
+    font-family: "Jaro", sans-serif;
+    letter-spacing: 4px;
+}
+
+.searchBar {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    padding: 0 28px;
+}
+
+.searchBar.visible {
+    height: 50px;
+}
+
+.searchInput {
+    width: 100%;
+    height: 100%;
+    padding: 0 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--destaque);
+    outline: none;
+}
+
+.searchInput::placeholder {
+    color: #e6e6e6
+}
+
+.Menu img {
+    height: 150px;
+}
+
+.menuBottom {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.active {
+    padding: 0 10px 20px 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--texto-destaque);
+    border-bottom: 3px solid var(--texto-destaque);
+}
+
+.inactive {
+    padding: 0 10px 20px 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--texto);
+}
