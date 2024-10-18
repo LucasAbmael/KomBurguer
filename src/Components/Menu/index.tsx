@@ -37,9 +37,7 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
           <FaBars size={25} color="#626262" />
         </button>
         {isOpen && (
-          <nav>
-            <Link to="/Lanches" >Lanches</Link>
-            <Link to="/Bebidas" >Bebidas</Link>
+          <nav className={styles.navMenu}>
             <Link to="/Carrinho" >Carrinho</Link>
           </nav>
         )}
