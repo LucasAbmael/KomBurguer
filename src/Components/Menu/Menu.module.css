@@ -55,13 +55,13 @@
 .navMenu {
     width: 300px;
     height: 100vh;
-    position: fixed;
-    top: 70px;
+    position: absolute;
+    top: 0;
     left: 0;
     background-color: #FFF;
     display: flex;
     flex-direction: column;
-    padding: 20px 30px;
+    padding: 28px 10px;
     gap: 28px;
     box-shadow: 4px 0 6px -4px rgb(0,0,0, 20%)
 }
