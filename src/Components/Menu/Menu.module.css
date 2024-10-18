@@ -64,7 +64,7 @@
     align-items: center;
     padding-left: 30px;
     gap: 28px;
-    box-shadow: 4px 0 8px #626262
+    box-shadow: 4px 0 8px -4px #626262
 }
 
 .Menu img {
