@@ -40,7 +40,7 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
         {isOpen && (
           <nav className={styles.navMenu}>
             <button onClick={toggleMenu} style={{ border: "none", outline: "none", background: "none" }}>
-              <IoClose size={35} color="#626262" />
+              <IoClose size={40} color="#626262" />
             </button>
             <Link to="/Carrinho" >Carrinho</Link>
           </nav>
