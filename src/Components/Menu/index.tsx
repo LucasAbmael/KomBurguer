@@ -47,7 +47,7 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
             </button>
             <Link to="/Carrinho" className={styles.menuLink}><FaCartShopping size={24} color="#626262"/>Carrinho</Link>
             <a href="https://wa.me//555190135176" className={styles.menuLink}><MdContactSupport size={24} color="#626262" />Contato</a>
-            <a href="https://instagram.com/komburguerrn" className={styles.menuLink}><AiFillInstagram size={24} color="#626262" />Nosso Instagram</a>
+            <a href="https://instagram.com/komburguernh" className={styles.menuLink}><AiFillInstagram size={24} color="#626262" />Nosso Instagram</a>
           </nav>
         )}
         <a href="#" className={styles.menuLogo}>KomBurguer</a>
