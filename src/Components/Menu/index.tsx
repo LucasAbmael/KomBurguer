@@ -42,7 +42,9 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
             <button onClick={toggleMenu} style={{ border: "none", outline: "none", background: "none" }}>
               <IoClose size={40} color="#626262" />
             </button>
-            <Link to="/Carrinho" >Carrinho</Link>
+            <Link to="/Carrinho" className={styles.menuLink}>Carrinho</Link>
+            <a href="https://wa.me//555190135176" className={styles.menuLink}>Contato</a>
+            <a href="https://instagram.com/komburguerrn" className={styles.menuLink}>Nosso Instagram</a>
           </nav>
         )}
         <a href="#" className={styles.menuLogo}>KomBurguer</a>
