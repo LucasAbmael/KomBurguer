@@ -3,6 +3,7 @@ import { FaBars, FaSearch } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import styles from "./Menu.module.css";
 import { Link } from 'react-router-dom';
+import { IoClose } from "react-icons/io5";
 
 interface Props {
   image: string;
@@ -38,6 +39,9 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
         </button>
         {isOpen && (
           <nav className={styles.navMenu}>
+            <button onClick={toggleMenu} style={{ border: "none", outline: "none", background: "none" }}>
+              <IoClose size={25} color="#626262" />
+            </button>
             <Link to="/Carrinho" >Carrinho</Link>
           </nav>
         )}
