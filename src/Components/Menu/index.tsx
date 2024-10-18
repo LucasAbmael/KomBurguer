@@ -33,7 +33,7 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
   return (
     <div className={styles.Menu}>
       <div className={styles.menuTop}>
-        <button onClick={toggleMenu}>
+        <button onClick={toggleMenu} style={{ border: "none", outline: "none", background: "none" }}>
           <FaBars size={25} color="#626262" />
         </button>
         {isOpen && (
