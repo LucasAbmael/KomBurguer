@@ -9,6 +9,7 @@ interface Lanche {
   nome: string;
   preco: string;
   ingredientes: string;
+  imgUrl: string;
 }
 
 const Lanches: React.FC = () => {
@@ -56,6 +57,7 @@ const Lanches: React.FC = () => {
                 nome={lanche.nome}
                 preco={lanche.preco}
                 ingredientes={lanche.ingredientes}
+                imgUrl={lanche.imgUrl}
               />
             ))
           )}

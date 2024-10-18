@@ -2,31 +2,37 @@
     {
         "nome": "X-Tudo",
         "preco": "29,90",
-        "ingredientes": "..."
+        "ingredientes": "...",
+        "imgUrl": "https://th.bing.com/th/id/OIP.3iP4oOAiL4f9hQlE9lEvawHaE8?rs=1&pid=ImgDetMain"
     },
     {
         "nome": "X-Salada",
         "preco": "29,90",
-        "ingredientes": "..."
+        "ingredientes": "...",
+        "imgUrl": "https://plus.unsplash.com/premium_photo-1675252369719-dd52bc69c3df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGFtYnVyZ3VlcnxlbnwwfHwwfHx8MA%3D%3D"
     },
     {
         "nome": "X-Bacon",
         "preco": "29,90",
-        "ingredientes": "..."
+        "ingredientes": "...",
+        "imgUrl": "https://media.istockphoto.com/id/1309352410/pt/foto/cheeseburger-with-tomato-and-lettuce-on-wooden-board.webp?a=1&b=1&s=612x612&w=0&k=20&c=Aw9MVd-xkqJ2nU7AW_GScQY7rPuMTIFDVWAgN-_47ds="
     },
     {
         "nome": "Tradicional",
         "preco": "29,90",
-        "ingredientes": "..."
+        "ingredientes": "...",
+        "imgUrl": "https://images.unsplash.com/photo-1532290462266-c6a468b6d076?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhhbWJ1cmd1ZXJ8ZW58MHx8MHx8fDA%3D"
     },
     {
         "nome": "Combo",
         "preco": "29,90",
-        "ingredientes": "..."
+        "ingredientes": "...",
+        "imgUrl": "https://images.unsplash.com/photo-1477617722074-45613a51bf6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhhbWJ1cmd1ZXJ8ZW58MHx8MHx8fDA%3D"
     },
     {
         "nome": "Vegano",
         "preco": "29,90",
-        "ingredientes": "..."
+        "ingredientes": "...",
+        "imgUrl": "https://media.istockphoto.com/id/2061716709/pt/foto/grilled-rib-burger.jpg?s=1024x1024&w=is&k=20&c=8HOIAEHWvcUsubhCWPTbniRyEsSivjdG8uUg3FjW2V4="
     }
 ]

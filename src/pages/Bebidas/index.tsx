@@ -8,6 +8,7 @@ interface Bebida {
   nome: string;
   preco: string;
   ingredientes: string;
+  imgUrl: string;
 }
 
 const Bebidas: React.FC = () => {
@@ -52,6 +53,7 @@ const Bebidas: React.FC = () => {
                 nome={bebida.nome}
                 preco={bebida.preco}
                 ingredientes={bebida.ingredientes}
+                imgUrl={bebida.imgUrl}
               />
             ))
           )}

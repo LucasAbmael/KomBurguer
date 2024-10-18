@@ -1,4 +1,3 @@
-// MenuItem.tsx
 import React from 'react';
 import styles from "./MenuItem.module.css";
 import { IoAddCircleSharp } from "react-icons/io5";
@@ -9,22 +8,23 @@ interface MenuItemProps {
   nome: string;
   preco: string;
   ingredientes: string;
+  imgUrl: string;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ nome, preco, ingredientes }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ nome, preco, ingredientes, imgUrl }) => {
 
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    const item = { nome, preco, ingredientes };
+    const item = { nome, preco, ingredientes, imgUrl };
     addToCart(item);
-    alert(`${nome} adicionado ao carrinho!`); // Mensagem de confirmação
   };
+
 
   return (
     <div className={styles.container}>
       <div className={styles.detais}>
-        <div style={{ width: "70px", height: "70px", borderRadius: "35px", background: "#CCC" }}></div>
+        <img src={imgUrl} alt="Imagem do Produto" style={{ width: "70px", height: "70px", borderRadius: "35px"}} />
         <div className={styles.informacoes}>
           <h2>{nome}</h2>
           <p>Preço: R${preco}</p>
