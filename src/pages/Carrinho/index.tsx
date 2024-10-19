@@ -23,11 +23,17 @@ const Carrinho: React.FC = () => {
   const [erroPagamento, setErroPagamento] = useState(false);
 
   const CART_ADDRESS_KEY = 'enderecoEntrega';
+  const CART_NAME_KEY = 'nomeCliente';  // Chave para armazenar o nome do cliente
 
   useEffect(() => {
     const storedEndereco = localStorage.getItem(CART_ADDRESS_KEY);
     if (storedEndereco) {
       setEndereco(storedEndereco);
+    }
+
+    const storedNome = localStorage.getItem(CART_NAME_KEY);
+    if (storedNome) {
+      setNome(storedNome);
     }
   }, []);
 
@@ -38,6 +44,14 @@ const Carrinho: React.FC = () => {
       localStorage.setItem(CART_ADDRESS_KEY, endereco);
     }
   }, [endereco]);
+
+  useEffect(() => {
+    if (nome.trim() === '') {
+      localStorage.removeItem(CART_NAME_KEY);
+    } else {
+      localStorage.setItem(CART_NAME_KEY, nome);
+    }
+  }, [nome]);
 
   const handleRemoverItem = (index: number) => {
     removeFromCart(index);
@@ -69,9 +83,9 @@ const Carrinho: React.FC = () => {
       return;
     }
 
-    const numeroWhatsApp = '5583999884375';
+    const numeroWhatsApp = '555190135176';
     const mensagem = cartItems.map(item => `${item.quantidade} ${item.nome}`).join('\n');
-    const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(`Pedido:\n\nNome: ${nome}\n\n${mensagem}\n\nTotal: R$${calcularTotal()}\n\nEndereço: ${endereco}\n\nForma de Pagamento: ${formaPagamento}`)}`;
+    const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(`Pedido:\n\nNome: ${nome}\n\nIte${mensagem}\n\nTotal: R$${calcularTotal()}\n\nEndereço: ${endereco}\n\nForma de Pagamento: ${formaPagamento}`)}`;
 
     window.open(url, '_blank');
     clearCart();
@@ -185,8 +199,14 @@ const Carrinho: React.FC = () => {
                       type="number"
                       value={item.quantidade}
                       onChange={(e) => handleQuantityChange(item.nome, parseInt(e.target.value))}
-                      min="1"
-                      style={{ margin: 0, width: 50, height: 30, border: "none", outline: "none", background: "#f5f5f5", fontSize: "1rem", textAlign: "center", borderTop: "1px solid #CCC", borderBottom: "1px solid #CCC" }}
+                      style={{
+                        width: 50,
+                        height: 30,
+                        textAlign: 'center',
+                        border: '1px solid #ccc',
+                        borderRadius: 0,
+                        outline: 'none'
+                      }}
                     />
                     <button
                       onClick={() => handleQuantityChange(item.nome, item.quantidade + 1)}
@@ -208,9 +228,11 @@ const Carrinho: React.FC = () => {
             ))}
           </ul>
 
-          <div className={styles.total}>
-            <h2 style={{ fontFamily: "Poppins", fontSize: "1.5rem", fontWeight: "500", color: "#626262" }}>Total: R${calcularTotal()}</h2>
-            <button onClick={handleFinalizarPedido} style={{ fontFamily: "Poppins", fontSize: "1rem", fontWeight: "700", color: "#FFF", background: "#F29D38", border: "none", outline: "none", borderRadius: 20, padding: 10 }}>Finalizar Pedido</button>
+          <div className={styles.resumo}>
+            <h2 style={{ fontFamily: "Poppins", fontSize: "1.5rem", fontWeight: "500", color: "#626262" }}>Total: R$ {calcularTotal()}</h2>
+            <button style={{ fontFamily: "Poppins", fontSize: "1rem", fontWeight: "700", color: "#FFF", background: "#F29D38", border: "none", outline: "none", borderRadius: 20, padding: 10 }} onClick={handleFinalizarPedido}>
+              Finalizar Pedido
+            </button>
           </div>
         </div>
       )}
