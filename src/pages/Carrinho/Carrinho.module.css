@@ -8,14 +8,13 @@
     padding-left: 8px;
 }
 
-.campoEndereco {
+.campoEndereco, .campoPagamento, .campoNome {
     padding: 20px 10px 10px 10px;
 }
 
-.userEndereco {
+.userEndereco, .userPagamento, .userNome {
     outline: none;
     border: 1px solid #d8d8d8;
-    height: 40px;
     border-radius: 20px;
     width: 100%;
     padding: 16px;

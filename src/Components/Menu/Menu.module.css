@@ -53,9 +53,9 @@
 }
 
 .navMenu {
-    width: 300px; /* Ajustado para um valor fixo */
+    width: 300px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #FFF;
@@ -65,7 +65,7 @@
     justify-content: start;
     padding: 12px 18px;
     gap: 20px;
-    box-shadow: 4px 0 6px -4px rgba(0, 0, 0, 0.2); /* Ajustado para rgba */
+    box-shadow: 4px 0 6px -4px rgba(0, 0, 0, 0.2);
     animation: entrada .2s;
 }
 

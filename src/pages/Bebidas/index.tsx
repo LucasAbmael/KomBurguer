@@ -7,7 +7,6 @@ import MenuItem from '../../Components/MenuItem'; // Importa o componente MenuIt
 interface Bebida {
   nome: string;
   preco: string;
-  ingredientes: string;
   imgUrl: string;
 }
 
@@ -52,7 +51,6 @@ const Bebidas: React.FC = () => {
                 key={index}
                 nome={bebida.nome}
                 preco={bebida.preco}
-                ingredientes={bebida.ingredientes}
                 imgUrl={bebida.imgUrl}
               />
             ))

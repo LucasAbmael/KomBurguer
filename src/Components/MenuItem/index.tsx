@@ -7,7 +7,7 @@ import { useCart } from '../../cartContext';
 interface MenuItemProps {
   nome: string;
   preco: string;
-  ingredientes: string;
+  ingredientes?: string; // Tornando a propriedade ingredientes opcional
   imgUrl: string;
 }
 
@@ -16,7 +16,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ nome, preco, ingredientes, imgUrl }
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleAddToCart = () => {
-    const item = { nome, preco, ingredientes, imgUrl, quantidade: 1 };
+    const item = { nome, preco, ingredientes: ingredientes || '', imgUrl, quantidade: 1 }; // Usando '' se ingredientes não estiver definido
     addToCart(item);
   };
 
@@ -38,12 +38,14 @@ const MenuItem: React.FC<MenuItemProps> = ({ nome, preco, ingredientes, imgUrl }
           <button onClick={handleAddToCart} style={{ border: "none", outline: "none", background: "none" }}>
             <IoAddCircleSharp size={30} color="#F29D38" />
           </button>
-          <button onClick={toggleExpand} style={{ border: "none", outline: "none", background: "none" }}>
-            {isExpanded ? <IoIosArrowUp size={30} color="#333333" /> : <IoIosArrowDown size={30} color="#333333" />}
-          </button>
+          {ingredientes && ( // Renderiza os botões de expansão apenas se ingredientes estiver definido
+            <button onClick={toggleExpand} style={{ border: "none", outline: "none", background: "none" }}>
+              {isExpanded ? <IoIosArrowUp size={30} color="#333333" /> : <IoIosArrowDown size={30} color="#333333" />}
+            </button>
+          )}
         </div>
       </div>
-      {isExpanded && (
+      {isExpanded && ingredientes && ( // Renderizando ingredientes apenas se estiverem definidos
         <div className={styles.containerBottom}>
           <p style={{ fontFamily: "Poppins", fontWeight: "700", fontSize: "1.2rem", color: "#333333" }}>Ingredientes</p>
           <p className={styles.itemDescricao}>{ingredientes}</p>
