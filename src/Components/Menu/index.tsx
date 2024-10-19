@@ -3,6 +3,10 @@ import { FaBars, FaSearch } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import styles from "./Menu.module.css";
 import { Link } from 'react-router-dom';
+import { IoClose } from "react-icons/io5";
+import { FaCartShopping } from "react-icons/fa6";
+import { MdContactSupport } from "react-icons/md";
+import { AiFillInstagram } from "react-icons/ai";
 
 interface Props {
   image: string;
@@ -33,14 +37,20 @@ export const Menu: React.FC<Props> = ({ image, alternative, onSearch }) => {
   return (
     <div className={styles.Menu}>
       <div className={styles.menuTop}>
-        <button onClick={toggleMenu}>
-          <FaBars size={25} color="#626262" />
-        </button>
+        <div style={{ display: "flex", flexDirection: "row", gap: 8, alignItems: "center"}}>
+          <button onClick={toggleMenu} style={{ border: "none", outline: "none", background: "none" }}>
+            <FaBars size={25} color="#626262" />
+          </button>
+          <Link to="/Carrinho"><FaCartShopping size={25} color="#626262"/></Link>
+        </div>
         {isOpen && (
-          <nav>
-            <Link to="/Lanches" >Lanches</Link>
-            <Link to="/Bebidas" >Bebidas</Link>
-            <Link to="/Carrinho" >Carrinho</Link>
+          <nav className={styles.navMenu}>
+            <button onClick={toggleMenu} style={{ border: "none", outline: "none", background: "none" }}>
+              <IoClose size={40} color="#626262" />
+            </button>
+            <Link to="/Carrinho" className={styles.menuLink}><FaCartShopping size={24} color="#626262"/>Carrinho</Link>
+            <a href="https://wa.me//555190135176" about="_blank" className={styles.menuLink}><MdContactSupport size={24} color="#626262" />Contato</a>
+            <a href="https://instagram.com/komburguernh" about="_blank" className={styles.menuLink}><AiFillInstagram size={24} color="#626262" />Nosso Instagram</a>
           </nav>
         )}
         <a href="#" className={styles.menuLogo}>KomBurguer</a>
