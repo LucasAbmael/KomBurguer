@@ -94,22 +94,70 @@ const Carrinho: React.FC = () => {
           </div>
           <ul style={{ paddingBottom: 100 }}>
             {cartItems.map((item, index) => (
-              <li key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 10, margin: 10, background: "#FFF" }}>
-                <div>
-                  <h2>{item.nome}</h2>
-                  <p>Preço: R${item.preco}</p>
-                  <input
-                    type="number"
-                    value={item.quantidade}
-                    onChange={(e) => handleQuantityChange(item.nome, parseInt(e.target.value))}
-                    min="1"
-                    style={{ width: "50px", marginRight: "10px" }}
-                  />
+
+
+              <li key={index} className={styles.container}>
+
+                <div className={styles.containerTop}>
+                  <div className={styles.details}>
+                    <img src={item.imgUrl} alt="Imagem do Produto" style={{ width: 70, height: 70, borderRadius: 35 }} />
+                    <div className={styles.informacoes}>
+                      <h2 className={styles.itemNome}>{item.nome}</h2>
+                      <p className={styles.itemPreco}>R${item.preco}</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.options}>
+                    <button onClick={() => handleRemoverItem(index)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+                      <FaTrash size={25} color="red" />
+                    </button>
+                  </div>
+                  
                 </div>
-                <button onClick={() => handleRemoverItem(index)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-                  <FaTrash size={25} color="red" />
-                </button>
+
+                <div className={styles.containerBottom}>
+                  <p style={{ fontFamily: "Poppins", fontSize: "1rem", fontWeight: "500" }}>Quantidade:</p>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <button
+                      onClick={() => handleQuantityChange(item.nome, item.quantidade - 1)}
+                      disabled={item.quantidade <= 1} // Desabilita o botão se a quantidade for 1
+                      style={{
+                        background: 'none',
+                        border: '1px solid #ccc',
+                        borderRadius: 5,
+                        padding: '5px 10px',
+                        cursor: item.quantidade <= 1 ? 'not-allowed' : 'pointer',
+                        marginRight: '5px',
+                      }}
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      value={item.quantidade}
+                      onChange={(e) => handleQuantityChange(item.nome, parseInt(e.target.value))}
+                      min="1"
+                      style={{ width: "50px", margin: "0 5px" }}
+                    />
+                    <button
+                      onClick={() => handleQuantityChange(item.nome, item.quantidade + 1)}
+                      style={{
+                        background: 'none',
+                        border: '1px solid #ccc',
+                        borderRadius: 5,
+                        padding: '5px 10px',
+                        cursor: 'pointer',
+                        marginLeft: '5px',
+                      }}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
               </li>
+
+
             ))}
           </ul>
 
